@@ -1,4 +1,3 @@
-import FormValidator from './classes/FormValidator.js';
 import CommentFormValidator from './classes/CommentFormValidator.js';
 
 function showErrors(errors) {
@@ -16,16 +15,15 @@ function clearErrors() {
     }
 }
 
+
 let submitBtn = document.getElementById('submit_btn')
 submitBtn.addEventListener('click', function(e) {
     e.preventDefault();
 
-    clearErrors();
-
     let form = document.getElementById('comment_form');
-    let formData = FormValidator.getFormData(form);
-    let validator = new CommentFormValidator(formData);
+    let validator = new CommentFormValidator(form);
 
+    clearErrors();
     let valid = validator.validate();
     if (!valid) {
         let errors = validator.errors;

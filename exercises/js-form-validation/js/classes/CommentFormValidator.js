@@ -1,8 +1,8 @@
 import FormValidator from "./FormValidator.js";
 
 class CommentFormValidator extends FormValidator {
-    constructor(_data) {
-        super(_data);
+    constructor(_form) {
+        super(_form);
     }
 
     validate() {

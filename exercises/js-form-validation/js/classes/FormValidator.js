@@ -1,55 +1,23 @@
 class FormValidator {
-    static getFormData(form) {
-        let formData = [];
-        for (let i = 0; i < form.length; i++) {
-            let element = form.elements[i];
-            if (element.name !== '') {
-                switch (element.type) {
-                    case 'text':
-                    case 'textarea':
-                    case 'email':
-                    case 'password':
-                    case 'button':
-                    case 'submit':    
-                        formData[element.name] = element.value;
-                        break;
-                    case 'select-one':
-                        if (element.selectedIndex !== -1) {
-                            formData[element.name] = element.options[element.selectedIndex].value;
-                        }
-                        break;
-                    case 'radio':
-                        if (element.checked) {
-                            formData[element.name] = element.value;
-                        }
-                        break;
-                    case 'select-multiple' :
-                        if (element.selectedIndex !== -1) {
-                            formData[element.name] = [];
-                            for (let j = 0; j < element.selectedOptions.length; j++) {
-                                formData[element.name].push(element.options[j].value);
-                            }
-                        }
-                        break;       
-                    case 'checkbox':
-                        if (element.checked) {
-                            if (formData[element.name] === undefined) {
-                                formData[element.name] = [];
-                            }
-                            formData[element.name].push(element.value);
-                        }
-                        break;                
-                    default:
-                        break;
+
+    constructor(_form) {
+        this.form = _form;
+
+        let formData = new FormData(this.form);
+        let data = {};
+        for (let [key, value] of formData) {
+            if (data[key] !== undefined) {
+                if (!Array.isArray(data[key])) {
+                    data[key] = [data[key]];
                 }
+                data[key].push(value);
+            } else {
+                data[key] = value;
             }
         }
-        return formData;
-    }
-
-    constructor(_data) {
-        this.data = _data;
-        this.errors = new Map();
+        this.data = data;
+        
+        this.errors = {};
     }
 
     validate() {
