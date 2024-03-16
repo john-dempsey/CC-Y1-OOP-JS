@@ -21,7 +21,7 @@ class FormValidator {
     }
 
     validate() {
-        return this.errors.size === 0;
+        return Object.keys(this.errors).length === 0;
     }
 
     isPresent(key) {

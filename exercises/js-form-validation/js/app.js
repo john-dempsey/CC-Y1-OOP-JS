@@ -1,11 +1,12 @@
 import CommentFormValidator from './classes/CommentFormValidator.js';
 
 function showErrors(errors) {
-    errors.forEach((value, key) => {
-        let errorId = key + "_error";
+    for (let field in errors) {
+        let errorId = field + "_error";
+        let errorMessage = errors[field];
         let errorSpan = document.getElementById(errorId);
-        errorSpan.innerText = value;
-    });
+        errorSpan.innerText = errorMessage;
+    };
 }
 
 function clearErrors() {
@@ -14,7 +15,6 @@ function clearErrors() {
         errorSpans[i].innerText = '';
     }
 }
-
 
 let submitBtn = document.getElementById('submit_btn')
 submitBtn.addEventListener('click', function(e) {
