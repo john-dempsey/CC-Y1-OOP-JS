@@ -1,0 +1,205 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    background-color: white;
+}
+
+p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #262626;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #440063;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+  
+}
+
+h2 {
+    color: #262626;
+    color: black;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 48px;
+  
+}
+
+h3 {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+h5 {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+a.greenButton {
+    background-color: #00ccbc;
+    padding: 12px 22px 12px 22px;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+a.greenButton:hover {
+    background-color: #059c90;
+}
+
+#main {
+  /* overflow:scroll;  */
+  /* height:1000px; */
+  background-color: white;
+  padding: 30px;
+}
+
+#detail {
+    background-color: #FF5007;
+    color: black;
+}
+
+.logo {
+  position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #440063;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+
+.movie {
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+
+.movieDetail {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 50px;
+    font-size: 20px;
+    /* height: auto; */
+    height: 1000px;
+    overflow: scroll;
+}
+
+.card-container {
+    /* position: relative; */
+    /* margin: auto; */
+    overflow: auto;
+    white-space: nowrap;
+    /* padding: 10px; */
+    padding: 30px 0;
+    margin-bottom: 50px;
+
+}
+
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: white;
+    /* width: auto; */
+    width: 30%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .card-details {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .card-details p {
+    font-size: 14px;
+  }
+
+  .card-details b {
+    font-size: 16px;
+  }
+
+  .poster{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;;
+  }
+  
+
+  .bg {
+    /* The image used */
+    /* background-image: url("bg.jpg"); */
+    background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(23, 0, 14, 0.5)), url('bg.jpg');
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg2 {
+    /* The image used */
+    /* background-image: url("bg.jpg"); */
+    background: #eaeaea;
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+  }
+
+  .caption {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+  .caption span.text {
+    background-color: #440063;
+    color: #fff;
+    padding: 18px;
+    font-size: 32px;
+    letter-spacing: 10px;
+  }
+  .caption span.mainBtn {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    cursor: pointer;
+  }
+  .caption span.mainBtn:hover {
+    background-color: #fff;
+    color: #111;
+  }
